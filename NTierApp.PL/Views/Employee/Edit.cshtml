@@ -1,0 +1,23 @@
+﻿@using NTierApp.PL.Models;
+@model Employee
+@{string action = ViewBag.Action;}
+@using (Html.BeginForm(action, "Employee", FormMethod.Post))
+{
+    <table>
+        @Html.HiddenFor(p => p.Id)
+        <tr>
+            <td>@Html.LabelFor(p => p.LastName)</td>
+            <td>@Html.TextBoxFor(p => p.LastName)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(p => p.FirstName)</td>
+            <td>@Html.TextBoxFor(p => p.FirstName)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(p => p.Age)</td>
+            <td>@Html.TextBoxFor(p => p.Age)</td>
+        </tr>
+    </table>
+
+    <button>Submit</button>
+}
